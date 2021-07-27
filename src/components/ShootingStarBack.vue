@@ -45,7 +45,6 @@ body {
 
 .stars {
   position: fixed;
-  //z-index: -1;
   opacity: 100;
   top: 0;
   left: 0;
@@ -88,7 +87,7 @@ body {
     animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
   }
 
-  @for $i from 1 through 50 {
+  @for $i from 1 through 100 {
     &:nth-child(#{$i}) {
       --star-tail-length: #{random_range(500em, 750em) / 100};
       --top-offset: #{random_range(0vh, 10000vh) / 100};

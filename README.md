@@ -7,9 +7,17 @@ Simple VueJS Side project that I use to test and play around in Vue. Also acts a
 
  - BibleQuote.vue
     - Fetches and Displays latest Bible Quote from Lambda API (AWS ref: )
+   
+ - Clock.vue
+    - Simple Clock used for rendering different timezones.
+      - Can emit data from each. Current we only grab the single `seconds-update`
+ 
+ - ShootStarBack.vue
+   - The Shooting Star Background
+      - Pass in the amount of stars present as prop
     
 
-##E Project setup
+## Project setup
 ```
 npm install
 ```
