@@ -17,13 +17,7 @@ export default {
       starCounter: this.starCount
     }
   },
-  computed: {
-    cssProps(){
-      return {
-        '--star-count': parseInt(this.starCounter)
-      }
-    }
-  }
+  computed: {}
 }
 </script>
 
@@ -55,7 +49,7 @@ body {
   opacity: 100;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 125%;
   height: 150%;
   transform: rotate(-45deg);
   overflow-x: hidden;
@@ -64,7 +58,7 @@ body {
 /* Target ONLY Mobile Devices with a Touchscreen */
 @media only screen and (hover: none) and (pointer: coarse){
   .stars {
-    width: 200%;
+    width: 250%;
     height: 200%;
   }
 }

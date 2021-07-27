@@ -19,13 +19,13 @@ export default {
   data(){
     return {
       hour: 12,
-      minutes: '00'
+      minutes: '00',
+      seconds: '00'
     }
   },
   created() {
     // CALLING THIS FUNCTION TO UP TO DATE THE TIME
     setInterval(this.clockFun, 1000);
-    // this.clockFun()
   },
   methods: {
     clockFun() {
@@ -34,6 +34,7 @@ export default {
       let time = new Date(timeZoneClock);
       let hour = time.getHours();
       let min = time.getMinutes();
+      let sec = time.getSeconds();
       // STYLING THE HOURS AND MINUTES
       // Add 0 In front of single digits
       hour = (hour < 10) ? '0' + hour : hour;
@@ -41,7 +42,14 @@ export default {
       // UPDATING THEM WITH HOUR AND MINUTE VALUE
       this.hour = hour;
       this.minutes = min;
+      this.seconds = sec;
     },
+  },
+  watch: {
+    // Emit Seconds for Timer Bar
+    seconds: function(){
+      this.$emit('seconds-update', `${this.seconds}`);
+    }
   }
 
 
@@ -57,12 +65,11 @@ export default {
 
 /* clock styles here  */
 .box {
-  border-bottom: 2px solid black;
+  /*border-bottom: 2px solid black;*/
   height: 85%;
   width: 30%;
   font-family: sans-serif;
   padding: 0;
-  /*position: relative;*/
   display: flex;
   flex-direction: column;
 }
