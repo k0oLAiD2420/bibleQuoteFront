@@ -62,18 +62,28 @@ export default {
   width: 30%;
   font-family: sans-serif;
   padding: 0;
-  position: relative;
+  /*position: relative;*/
   display: flex;
   flex-direction: column;
 }
 
 .location {
   justify-content: center;
+  font-style: italic;
 }
 
 .content {
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: medium;
+}
+
+
+
+/* Target ONLY Mobile Devices with a Touchscreen */
+@media only screen and (hover: none) and (pointer: coarse){
+  .content {
+    font-size: x-small;
+  }
 }
 
 </style>
